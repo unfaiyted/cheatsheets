@@ -1,4 +1,4 @@
-**# Thymeleaf 3  Cheatsheet
+# Thymeleaf 3  Cheatsheet
 ## Strings and Expressions
 ### Rendering text to the Page
 ```html
@@ -58,16 +58,19 @@ Under the hood it's Java's for-each loop: `for(Object o : list)`
 </tr>
 ```
 
-iStat:\
-index: the current iteration index, starting with 0 (zero)\
-count: the number of elements processed so far\
-size: the total number of elements in the list\
-even/odd: checks if the current iteration index is even or odd\
-first:  checks if the current iteration is the first one\
-last: checks if the current iteration is the last one
-
-
+### Iterator to use inside of loopss
+| Object | Param      | Definition                             |   |
+|--------|------------|----------------------------------------|---|
+| iStat  |            |                                        |   |
+|        | .index     | The current index                      |   |
+|        | .even .odd | if it is even or odd returns a boolean |   |
+|        | .count     | count so far in the loop iterations    |   |
+|        | .size      | total number of elements in the list   |   |
+|        | .first     | returns boolean if first item or not   |   |
+|        | .last      | returns boolean if last or not         |   |
 ## If Conditional
+
+
 Example to conditionally render a part of the template:
 ```html
 <div th:if="${prod.count} == 1">Display Content</div>
@@ -93,6 +96,8 @@ Will choose the class name based on the value of `row.even`
 ```
 
 
+
+
 ## Objects
 Conditionally null object properties elements
 ```html
@@ -113,10 +118,15 @@ Conditionally null object properties elements
 </form>
 ```
 
+
 ## Controllers
 
 #### Method Annotations:
 `@RequestParam`: Single field from a form\
 `@PathVariable`: URL variable `user\{id}` \
 `@ModelAttribute`: Mapped return of the object associated with form bindings
+
+
+
+
 
